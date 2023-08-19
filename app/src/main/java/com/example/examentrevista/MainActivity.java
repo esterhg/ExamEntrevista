@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 uploadImage();
                 inicializarFirebase();
+
             }
         });
         img.setOnClickListener(new View.OnClickListener() {
@@ -272,6 +273,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Agregado", Toast.LENGTH_LONG).show();
         }
 
+        limpiarCampos();
+
     }
 
     private void startRecording() {
@@ -368,4 +371,14 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "No se encontró el archivo de audio", Toast.LENGTH_SHORT).show();
         }
     }
+    private void limpiarCampos() {
+        periodista.setText("");
+        descripcion.setText("");
+        fecha.setText("");
+        img.setImageDrawable(null);
+        if (isRecording) {
+            stopRecording();
+        }
+    }
+
 }

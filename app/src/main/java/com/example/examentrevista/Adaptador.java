@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.media.MediaPlayer;
 import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -29,6 +30,7 @@ import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -204,10 +206,34 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.EntrevistaViewHold
                 }
             }
         });
+        holder.audi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String audioUrl = persona1.getAudio();
+                if (audioUrl != null && !audioUrl.isEmpty()) {
+                    MediaPlayer mediaPlayer = new MediaPlayer();
+                    try {
+                        mediaPlayer.setDataSource(audioUrl);
+                        mediaPlayer.prepare();
+                        mediaPlayer.start();
 
-
-
-        }
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                // Se llama cuando la reproducción ha terminado
+                                mediaPlayer.release();
+                            }
+                        });
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        Toast.makeText(mContext, "Error al reproducir el audio", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(mContext, "No hay URL de audio disponible", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 
     @Override
     public int getItemCount() {
@@ -219,7 +245,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.EntrevistaViewHold
 
         private ImageView img;
         private TextView periodista, descripcion, fecha,audio;
-        private Button editar, eliminar;
+        private Button editar, eliminar,audi;
 
         public EntrevistaViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -231,6 +257,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.EntrevistaViewHold
 
             editar = itemView.findViewById(R.id.editar);
             eliminar = itemView.findViewById(R.id.eliminar);
+            audi = itemView.findViewById(R.id.audi);
 
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);
