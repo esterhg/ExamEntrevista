@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="3dp">
+
+    <EditText
+        android:id="@+id/txtfecha"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="44dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="210dp"
+        android:layout_height="127dp"
+        android:layout_marginBottom="42dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtnombr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/img" />
+
+    <TextView
+        android:id="@+id/txtnombr"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="47dp"
+        android:text="Descripcion"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/txtdescripcion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/txtdescripcion"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="55dp"
+        android:inputType="text"
+        android:text=""
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtnombr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtnombr"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="DuplicateIds" />
+
+    <EditText
+        android:id="@+id/txtperiodista"
+        android:layout_width="209dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="298dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="89dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnreproducir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="39dp"
+        android:text="Periodista"
+        app:layout_constraintBottom_toTopOf="@+id/txtfecha"
+        app:layout_constraintEnd_toStartOf="@+id/txtperiodista"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtnombr" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="9dp"
+        android:text="Fecha"
+        app:layout_constraintBottom_toBottomOf="@+id/txtfecha"
+        app:layout_constraintEnd_toStartOf="@+id/txtfecha"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="56dp"
+        android:text="Grabar Audio"
+        app:layout_constraintBottom_toTopOf="@+id/btnActualizar"
+        app:layout_constraintEnd_toStartOf="@+id/btngrabar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtfecha" />
+
+    <Button
+        android:id="@+id/btnActualizar"
+        android:layout_width="133dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="13dp"
+        android:backgroundTint="#40A798"
+        android:text="Guardar"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnlista"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/btnlista"
+        android:layout_width="133dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="84dp"
+        android:backgroundTint="#40A798"
+        android:text="Lista"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnActualizar" />
+
+    <ImageButton
+        android:id="@+id/btngrabar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="27dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/btnreproducir"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/txtfecha"
+        app:srcCompat="@drawable/grabar" />
+
+    <ImageButton
+        android:id="@+id/btnreproducir"
+        android:layout_width="66dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="230dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btngrabar"
+        app:layout_constraintTop_toBottomOf="@+id/txtperiodista"
+        app:srcCompat="@drawable/reproducir" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="145dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="22dp"
+        android:text="Entrevista"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

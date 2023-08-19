@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "200249220156",
+    "project_id": "entrevista-67431",
+    "storage_bucket": "entrevista-67431.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200249220156:android:5bf134cfa45cbae8c6f739",
+        "android_client_info": {
+          "package_name": "com.example.examentrevista"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200249220156-3reqf0a03dff113viivb4cb38a9fjubf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.examentrevista",
+            "certificate_hash": "70d8ee470b72d180398f0cac84bd7efbdd5fd38e"
+          }
+        },
+        {
+          "client_id": "200249220156-i8764spf5mqsjv3t7bn97tkqhfr7eklb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9frg4PTI5hR0TGyPqg2paIBtyQuZGbCY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200249220156-i8764spf5mqsjv3t7bn97tkqhfr7eklb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
